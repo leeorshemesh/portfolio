@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0c1f2e;
+  --ink-soft: #1a3344;
+  --teal: #0f766e;
+  --teal-bright: #14b8a6;
+  --paper: #eef3f5;
+  --paper-deep: #dde7eb;
+  --muted: #5a6b75;
+  --line: rgba(12, 31, 46, 0.12);
+  --surface: rgba(255, 255, 255, 0.55);
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-teal: var(--teal);
+  --color-teal-bright: var(--teal-bright);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 90% 60% at 10% -10%, rgba(20, 184, 166, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 95% 15%, rgba(12, 31, 46, 0.08), transparent 50%),
+    linear-gradient(180deg, #f7fafb 0%, var(--paper) 40%, var(--paper-deep) 100%),
+    linear-gradient(rgba(12, 31, 46, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 31, 46, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, auto, 48px 48px, 48px 48px;
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
+::selection {
+  background: rgba(20, 184, 166, 0.28);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.section-shell {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.fade-up {
+  animation: fade-up 0.85s ease-out both;
+}
+
+.fade-up-delay {
+  animation: fade-up 0.85s ease-out 0.15s both;
+}
+
+.fade-up-delay-2 {
+  animation: fade-up 0.85s ease-out 0.3s both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-up,
+  .fade-up-delay,
+  .fade-up-delay-2 {
+    animation: none;
+  }
+}
