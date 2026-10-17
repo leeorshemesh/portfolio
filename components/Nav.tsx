@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
+import { SocialIcons } from "@/components/SocialIcons";
 import { site } from "@/content/site";
 
 const links = [
@@ -72,14 +73,17 @@ export function Nav() {
             );
           })}
         </nav>
-        <Button
-          href={site.resumePath}
-          variant="ink"
-          className="px-3.5 py-2"
-          download
-        >
-          Resume
-        </Button>
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+          <SocialIcons size="sm" className="hidden sm:flex" />
+          <Button
+            href={site.resumePath}
+            variant="ink"
+            className="px-3.5 py-2"
+            download
+          >
+            Resume
+          </Button>
+        </div>
       </div>
     </header>
   );
