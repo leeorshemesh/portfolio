@@ -1,3 +1,17 @@
+export type Project = {
+  title: string;
+  year: string;
+  description: string;
+  tech: string[];
+  /** Path under `public/`, e.g. `/images/projects/pop-up-puzzles.jpg` */
+  image?: string;
+  imageAlt?: string;
+  links: {
+    github?: string;
+    live?: string;
+  };
+};
+
 export const site = {
   name: "Leeor Shemesh",
   title: "Computer Science · UC Santa Barbara",
@@ -79,7 +93,7 @@ export const site = {
       tech: ["Python", "Playwright", "Automation"],
       links: {},
     },
-  ],
+  ] satisfies Project[],
   skills: {
     Languages: ["C", "C++", "Python", "Java", "JavaScript", "HTML/CSS", "Dart"],
     "Frameworks / Libraries": [

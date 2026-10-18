@@ -1,49 +1,10 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
 import { Button } from "@/components/Button";
-
-type FormStatus = "idle" | "loading" | "success" | "error";
+import { useContactForm } from "@/hooks/useContactForm";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<FormStatus>("idle");
-  const [errorMessage, setErrorMessage] = useState("");
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setErrorMessage("");
-
-    if (!formspreeId) {
-      setStatus("error");
-      setErrorMessage(
-        "Contact form is not configured yet. Please email me directly for now.",
-      );
-      return;
-    }
-
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    setStatus("loading");
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-
-      if (!response.ok) {
-        throw new Error("Formspree rejected the submission.");
-      }
-
-      form.reset();
-      setStatus("success");
-    } catch {
-      setStatus("error");
-      setErrorMessage("Something went wrong. Please try again or email me directly.");
-    }
-  }
+  const { status, errorMessage, handleSubmit } = useContactForm();
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">

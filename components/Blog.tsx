@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { getLatestPosts } from "@/lib/blog";
+import { formatDate } from "@/lib/formatDate";
 
 export function Blog() {
   const posts = getLatestPosts(2);
@@ -39,13 +40,4 @@ export function Blog() {
       </ul>
     </section>
   );
-}
-
-function formatDate(date: string) {
-  if (!date) return "";
-  return new Date(`${date}T12:00:00`).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }

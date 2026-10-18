@@ -36,13 +36,40 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.siteUrl,
+  email: site.email,
+  jobTitle: "Computer Science Student",
+  affiliation: {
+    "@type": "CollegeOrUniversity",
+    name: site.education.school,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Tarzana",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
+  sameAs: [site.github, site.linkedin],
+  image: `${site.siteUrl}/images/portrait.jpg`,
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

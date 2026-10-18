@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Footer, Nav } from "@/components";
 import { Markdown } from "@/components/Markdown";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { formatDate } from "@/lib/formatDate";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -51,13 +52,4 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Footer />
     </>
   );
-}
-
-function formatDate(date: string) {
-  if (!date) return "";
-  return new Date(`${date}T12:00:00`).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Footer, Nav } from "@/components";
 import { getAllPosts } from "@/lib/blog";
+import { formatDate } from "@/lib/formatDate";
 
 export const metadata = {
   title: "Blog · Leeor Shemesh",
@@ -44,13 +45,4 @@ export default function BlogIndexPage() {
       <Footer />
     </>
   );
-}
-
-function formatDate(date: string) {
-  if (!date) return "";
-  return new Date(`${date}T12:00:00`).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
