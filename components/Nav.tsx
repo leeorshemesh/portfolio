@@ -49,7 +49,7 @@ export function Nav() {
           {site.name}
         </a>
         <nav
-          className="flex max-w-[55%] items-center gap-0.5 overflow-x-auto md:max-w-none"
+          className="flex min-w-0 flex-1 items-center justify-end gap-0 overflow-hidden md:justify-center md:gap-0.5"
           aria-label="Primary"
         >
           {links.map((link) => {
@@ -59,7 +59,7 @@ export function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative shrink-0 px-2.5 py-2 text-xs transition-colors sm:px-3 sm:text-sm ${
+                className={`relative shrink-0 px-1.5 py-2 text-[11px] transition-colors sm:px-2.5 sm:text-xs md:px-3 md:text-sm ${
                   isActive ? "text-ink" : "text-muted hover:text-ink"
                 }`}
               >

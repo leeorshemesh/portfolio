@@ -20,6 +20,11 @@ export function About() {
             {education.degree} · {education.years}
           </p>
           <p className="mt-3 text-ink">GPA {education.gpa}</p>
+          <ul className="mt-3 space-y-1 text-ink-soft">
+            {education.honors.map((honor) => (
+              <li key={honor}>{honor}</li>
+            ))}
+          </ul>
           <p className="mt-6 text-sm font-medium uppercase tracking-[0.14em] text-muted">
             Relevant coursework
           </p>

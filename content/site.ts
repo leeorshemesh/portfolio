@@ -3,7 +3,8 @@ export const site = {
   title: "Computer Science · UC Santa Barbara",
   location: "Tarzana, CA",
   tagline:
-    "CS student building systems, mobile research apps, and playful web experiences.",
+    "Detail oriented software engineer with a passion for creative problem solving",
+  siteUrl: "https://leeor-shemesh.vercel.app",
   email: "leeorshemesh1@gmail.com",
   github: "https://github.com/leeorshemesh",
   linkedin: "https://www.linkedin.com/in/leeor-shemesh",
@@ -12,7 +13,11 @@ export const site = {
     school: "University of California, Santa Barbara",
     degree: "Bachelor of Science, Computer Science",
     years: "2024 – 2028",
-    gpa: "3.87",
+    gpa: "3.88",
+    honors: [
+      "Regents Scholar",
+      "College of Engineering Honors Program",
+    ],
     coursework: [
       "Data Structures",
       "Algorithms",
