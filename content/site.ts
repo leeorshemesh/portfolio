@@ -26,6 +26,8 @@ export const site = {
   education: {
     school: "University of California, Santa Barbara",
     degree: "Bachelor of Science, Computer Science",
+    minor: "Applied Psychology",
+    minorSchool: "Gevirtz Graduate School of Education",
     years: "2024 – 2028",
     gpa: "3.88",
     honors: [

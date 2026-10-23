@@ -19,6 +19,9 @@ export function About() {
           <p className="mt-1 text-muted">
             {education.degree} · {education.years}
           </p>
+          <p className="mt-1 text-muted">
+            Minor in {education.minor}, {education.minorSchool}
+          </p>
           <p className="mt-3 text-ink">GPA {education.gpa}</p>
           <ul className="mt-3 space-y-1 text-ink-soft">
             {education.honors.map((honor) => (
