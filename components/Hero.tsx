@@ -39,7 +39,7 @@ export function Hero() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_24px_60px_rgba(12,31,46,0.18)]">
             <Image
               src="/images/portrait.jpg"
-              alt={`${site.name} smiling outdoors`}
+              alt={`Portrait of ${site.name}`}
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 420px"
