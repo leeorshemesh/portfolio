@@ -4,7 +4,7 @@ export function Skills() {
   return (
     <section id="skills" className="section-shell scroll-mt-24 py-20">
       <p className="text-sm font-medium uppercase tracking-[0.18em] text-teal">
-        Skills
+        Skills + Interests
       </p>
       <h2 className="font-display mt-3 text-3xl tracking-tight text-ink sm:text-4xl">
         Technical toolkit
@@ -24,6 +24,18 @@ export function Skills() {
             </ul>
           </div>
         ))}
+      </div>
+      <div className="mt-10 border-t border-line pt-5">
+        <h3 className="text-sm font-medium uppercase tracking-[0.14em] text-muted">
+          Interests
+        </h3>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {site.interests.map((interest) => (
+            <li key={interest} className="text-ink">
+              {interest}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

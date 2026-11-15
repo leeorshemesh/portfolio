@@ -49,7 +49,7 @@ const jsonLd = {
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Tarzana",
+    addressLocality: "Los Angeles",
     addressRegion: "CA",
     addressCountry: "US",
   },
