@@ -67,7 +67,7 @@ export const site = {
       tech: ["Expo", "TypeScript", "React Native", "Hono", "SQLite"],
       links: {
         github: "https://github.com/leeorshemesh/betterboxd",
-        live: "https://betterboxd.up.railway.app/feed",
+        live: "https://betterboxd.up.railway.app/",
       },
     },
     {
