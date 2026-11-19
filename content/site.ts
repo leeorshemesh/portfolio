@@ -60,6 +60,17 @@ export const site = {
   ],
   projects: [
     {
+      title: "Betterboxd",
+      year: "2026",
+      description:
+        "Letterboxd-style media diary for movies, shows, books, and music — with auth, reviews, friends, privacy-aware feeds, and catalog search across TMDB, Open Library, and Spotify.",
+      tech: ["Expo", "TypeScript", "React Native", "Hono", "SQLite"],
+      links: {
+        github: "https://github.com/leeorshemesh/betterboxd",
+        live: "https://betterboxd.up.railway.app/feed",
+      },
+    },
+    {
       title: "KOS",
       year: "2026",
       description:
